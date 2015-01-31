@@ -26,10 +26,9 @@ let http () =
 
   let callback (_,conn_id) req body = 
     let uri = Request.uri req in
-    let meth = Request.meth req in
     let path = Uri.path uri in
-    let () = Printf.eprintf "%s\n" path in
-    Server.respond_file ~fname:"tests/index.html" ()
+    let path = if path = "/" then "/index.html" else path in
+    Server.respond_file ~fname:("tests" ^ path) ()
   in
 
   let conn_closed (_,_) = () in
