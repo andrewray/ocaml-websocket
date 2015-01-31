@@ -7,4 +7,6 @@ let () =
     Pkg.lib "pkg/META";
     Pkg.lib ~exts:Exts.module_library "lib/websocket";
     Pkg.bin ~auto:true "tests/wscat";
+    Pkg.bin "tests/wsclient.byte";
+    Pkg.bin ~auto:true "tests/wsserver";
   ]

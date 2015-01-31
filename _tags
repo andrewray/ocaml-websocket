@@ -8,3 +8,8 @@ true: bin_annot, debug, safe_string
 	  package(tls.lwt), \
 	  package(uri), \
 	  package(cohttp.lwt)
+
+<tests/wsclient.*>: syntax(camlp4o), \
+  package(js_of_ocaml), \
+  package(js_of_ocaml.syntax)
+

@@ -7,6 +7,9 @@ all: build
 build:
 	ocaml pkg/build.ml $(BUILDOPTS)
 
+js: build
+	js_of_ocaml wsclient.byte -o tests/wsclient.js
+
 install: build
 	opam-installer --prefix=$(PREFIX) $(PKG).install
 
